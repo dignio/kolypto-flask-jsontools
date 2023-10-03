@@ -1,10 +1,11 @@
 from __future__ import absolute_import
 from builtins import object
+from json import JSONEncoder
 
-from flask.json import JSONEncoder
+from flask.json.provider import JSONProvider
 
 
-class DynamicJSONEncoder(JSONEncoder):
+class DynamicJSONEncoder(JSONProvider):
     """ JSON encoder for custom classes:
 
         Uses __json__() method if available to prepare the object.
