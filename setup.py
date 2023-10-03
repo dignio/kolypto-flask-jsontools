@@ -22,7 +22,7 @@ setup(
     entry_points={},
 
     install_requires=[
-        'flask >= 0.10.1',
+        'flask >= 3.0.0',
         'future >= 0.17.1',
     ],
     extras_require={},
