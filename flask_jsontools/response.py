@@ -20,7 +20,11 @@ class JsonResponse(Response):
 
         # PrettyPrint?
         try:
-            indent = 2 if current_app.config['JSONIFY_PRETTYPRINT_REGULAR'] and not request.is_xhr else None
+            indent = (
+                2
+                if current_app.config.get("JSONIFY_PRETTYPRINT_REGULAR") and not request.is_xhr
+                else None
+            )
         except RuntimeError:  # "RuntimeError: working outside of application context"
             indent = None
 
