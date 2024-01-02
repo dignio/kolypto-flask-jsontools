@@ -22,8 +22,9 @@ setup(
     entry_points={},
 
     install_requires=[
-        'flask >= 0.10.1',
+        'flask >= 0.10.1, < 2',
         'future >= 0.17.1',
+        'MarkupSafe < 2',
     ],
     extras_require={},
     include_package_data=True,
