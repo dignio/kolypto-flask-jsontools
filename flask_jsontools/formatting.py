@@ -1,7 +1,6 @@
 from __future__ import absolute_import
 from builtins import object
-
-from flask.json import JSONEncoder
+from json import JSONEncoder
 
 
 class DynamicJSONEncoder(JSONEncoder):
