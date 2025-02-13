@@ -5,10 +5,9 @@ import inspect
 from collections import defaultdict
 from functools import wraps
 
-from flask.views import View, with_metaclass
+from flask.views import View
 from flask import request
 from werkzeug.exceptions import MethodNotAllowed
-from future.utils import string_types
 
 
 def methodview(methods=(), ifnset=None, ifset=None):
@@ -49,11 +48,11 @@ class _MethodViewInfo(object):
         except AttributeError: return None
 
     def __init__(self, methods=None, ifnset=None, ifset=None):
-        if isinstance(methods, string_types):
+        if isinstance(methods, str):
             methods = (methods,)
-        if isinstance(ifnset, string_types):
+        if isinstance(ifnset, str):
             ifnset = (ifnset,)
-        if isinstance(ifset, string_types):
+        if isinstance(ifset, str):
             ifset = (ifset,)
 
         #: Method verbs, uppercase
@@ -110,7 +109,7 @@ class MethodViewType(type):
         super(MethodViewType, cls).__init__(name, bases, d)
 
 
-class MethodView(with_metaclass(MethodViewType, View)):
+class MethodView(View, metaclass=MethodViewType):
     """ Class-based view that dispatches requests to methods decorated with @methodview """
 
     def _match_view(self, method, route_params):
@@ -194,7 +193,7 @@ class RestfulViewType(MethodViewType):
         super(RestfulViewType, cls).__init__(name, bases, d)
 
 
-class RestfulView(with_metaclass(RestfulViewType, MethodView)):
+class RestfulView(MethodView, metaclass=RestfulViewType):
     """ Method View that automatically defines the following methods:
 
         Collection:

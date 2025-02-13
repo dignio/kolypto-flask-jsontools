@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "kolypto-flask-jsontools"
+version = "1.0.0"
+description = "JSON API tools for Flask"
+authors = ["Dignio AS"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "2.2.5"
+werkzeug = ">=2.2.2 <3"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
