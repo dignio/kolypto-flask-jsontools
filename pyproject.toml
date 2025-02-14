@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "kolypto-flask-jsontools"
+name = "flask-jsontools"
 version = "1.0.0"
 description = "JSON API tools for Flask"
 authors = ["Dignio AS"]
