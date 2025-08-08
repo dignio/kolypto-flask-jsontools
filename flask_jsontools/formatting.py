@@ -1,23 +1,20 @@
 from __future__ import absolute_import
 from builtins import object
 
-from flask.json import JSONEncoder
+from flask.json.provider import DefaultJSONProvider
 
 
-class DynamicJSONEncoder(JSONEncoder):
-    """ JSON encoder for custom classes:
+class DynamicJSONProvider(DefaultJSONProvider):
+    """JSON provider for custom classes:
 
         Uses __json__() method if available to prepare the object.
         Especially useful for SQLAlchemy models
     """
-
     def default(self, o):
-        # Custom JSON-encodeable objects
         if hasattr(o, '__json__'):
             return o.__json__()
 
-        # Default
-        return super(DynamicJSONEncoder, self).default(o)
+        return super().default(o)
 
 
 #region SqlAlchemy Tools
