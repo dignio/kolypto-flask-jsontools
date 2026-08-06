@@ -22,8 +22,8 @@ setup(
     entry_points={},
 
     install_requires=[
-        'flask >= 0.10.1',
-        'future >= 0.17.1',
+        'flask == 2.2.5',
+        'werkzeug >= 2.2.2, < 3',
     ],
     extras_require={},
     include_package_data=True,
@@ -36,8 +36,9 @@ setup(
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.14',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
+    python_requires='>=3.14,<4.0',
 )
