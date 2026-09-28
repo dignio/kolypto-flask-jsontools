@@ -6,7 +6,7 @@ authors = ["Dignio AS"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.14"
+python = "^3.12"
 flask = "2.2.5"
 werkzeug = ">=2.2.2 <3"
 

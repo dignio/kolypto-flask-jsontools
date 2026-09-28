@@ -1,5 +1,5 @@
 [![Build Status](https://api.travis-ci.org/kolypto/py-flask-jsontools.png?branch=master)](https://travis-ci.org/kolypto/py-flask-jsontools)
-[![Pythons](https://img.shields.io/badge/python-3.14-blue.svg)](.travis.yml)
+[![Pythons](https://img.shields.io/badge/python-3.12%2B-blue.svg)](tox.ini)
 
 
 Flask JsonTools
